@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(rgb(91, 5, 74),rgb(118, 46, 234),rgb(229, 36, 84)
+    );
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #52d0d4;
+}
+
+ label {
+    /* display: block; */
+    /* margin: 10px 0 5px; */
+}
+
+input {
+    /* width: 20%; */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.show-button {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+}
+
+.print-button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #4cacaf;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a787ed;
+    font-family: 'Roboto';
+    font-weight: 800;
+}
+
+#reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+#reportTable th, #reportTable td {
+    padding: 10px;
+    text-align: left;
+}
+
+
+.fixed-width {
+    width: 150px; /* Adjust this value as needed */
+}
+
+/* .bio-chemistry{
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+.bio-chemistry {
+    text-decoration: underline;
+    font-style: italic;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.report-headings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.report-headings h2{
+    text-decoration: underline;
+}
+
+.report-headings h2, .report-headings p {
+    flex: 1;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.report-headings p {
+    display: flex;
+    align-items: center;
+}
+
+.report-headings span {
+    margin-left: 5px;
+}
+
+.report-details{
+  width: 100%; /* Adjust width as needed */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.report-details p{
+    width: 50%;
+    margin: 10px 0;
+}
+
+/* Print styles */
+/* @media print {
+    body * {
+        visibility: hidden;
+    }
+    #reportSection, #reportSection * {
+        visibility: visible;
+    }
+    #reportSection {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+} */
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #reportSection, #reportSection * {
+        visibility: visible;
+    }
+    #reportSection {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+       margin-top: 30%;
+    }
+    
+    #reportTable {
+        page-break-inside: avoid;
+    }
+
+    .report-headings {
+        page-break-inside: avoid;
+    }
+
+    .print-button{
+        display: none;
+    }
+
+    .bio-chemistry{
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    .report-details{
+        margin-top: 10%;
+    }
+}

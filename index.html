@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="labReportForm">
+        <h1>Patient Details</h1>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" placeholder="Patient Name">
+        <br>
+        <label for="ageInYears">Age in Years:</label>
+        <input type="number" id="ageInYears" name="ageInYears" placeholder="Age In Years"/>
+        <br>
+        <input type="radio" id="male" value="M" name="gender" checked/>
+        <label for="male">Male</label>
+        <input type="radio" id="female" value="F" name="gender"/>
+        <label for="female">Female</label>
+        <br />
+        <label for="visitDate">Visit Date:</label>
+        <input id="visitDate" type="date"/> 
+        <br />
+        <label for="refferedByDr">Referred by Dr:</label>
+        <input type="text" value="SELF" id="refferedByDr"/>
+        <br/>
+        
+        <h1>Test Details</h1>
+        <label for="fastingBloodSugar">Fasting Blood sugar:</label>
+        <input id="fastingBloodSugar" type="number" placeholder="mg/dl"/>
+        <br />
+        <label for="postLanchBloodSugar">Post lanch Blood Sugar:</label>
+        <input id="postLanchBloodSugar" type="number" placeholder="mg/dl" />
+      
+        <button class="show-button" type="button" onclick="showReport()">Show Report</button>
+    </form>
+
+    <div id="reportSection" style="display: none;">
+       
+        <div class="report-details">
+            <p><strong>Patient Name:</strong> <span id="reportPatientName"></span></p>
+            <p><strong>Age/Sex:</strong> <span id="reportAgeGender"></span></p>
+            <p><strong>Referred by Dr:</strong> <span id="reportDr"></span></p>
+            <p><strong>Visit Date:</strong> <span id="reportVisitDate"></span></p>
+        </div>
+        <h1 class="bio-chemistry">BIO CHEMISTRY</h1>
+        <div class="report-headings">
+            <h2>PARAMETER</h2>
+            <h2>TEST</h2>
+            <h2>NORMAL RANGE</h2>
+        </div>
+        <div class="report-headings">
+            <p>Fasting Blood Sugar</p>
+            <p>: <span id="reportFastingBloodSugar"></span> mg/dl</p>
+            <p>(70-110mg/dl)</p>
+        </div>
+        <div class="report-headings">
+            <p>Fasting Urine Sugar</p>
+            <p>: N/G</p>
+            <p></p>
+        </div>
+        <div class="report-headings">
+            <p>Post Lanch Blood Sugar</p>
+            <p>: <span id="reportPostLanchBloodSugar"></span> mg/dl</p>
+            <p>(80-170mg/dl)</p>
+        </div>
+        <div class="report-headings">
+            <p>Post Lanch Urine Sugar</p>
+            <p>: N/G</p>
+            <p></p>
+        </div>
+        
+        <button class="print-button" type="button" onclick="printReport()">Print</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
